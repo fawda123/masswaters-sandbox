@@ -7,7 +7,11 @@ library(here)
 # massachusetts counties
 massco <- st_read('https://earthworks.stanford.edu/download/file/tufts-macounties10-geojson.json')
 
-# tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&State=MA&ReportDateType=reportdate&StartDate=1/1/2021&EndDate=12/31/2021'))
+# get data for one station
+tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&station=MA-ES-76&ReportDateType=reportdate&StartDate=1/1/2000&EndDate=12/31/2021'))
+
+# get data for the whole state
+tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&State=MA&ReportDateType=reportdate&StartDate=1/1/2021&EndDate=12/31/2021'))
 
 # get all stations in massachusetts
 cocometarw <- read.csv(url('https://data.cocorahs.org/export/exportstations.aspx?Format=csv&state=ma'))
