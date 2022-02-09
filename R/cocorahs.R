@@ -8,10 +8,14 @@ library(here)
 massco <- st_read('https://earthworks.stanford.edu/download/file/tufts-macounties10-geojson.json')
 
 # get data for one station
-tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&station=MA-ES-76&ReportDateType=reportdate&StartDate=1/1/2000&EndDate=12/31/2021'))
+tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&station=MA-ES-76&ReportDateType=reportdate&StartDate=1/1/2001&EndDate=12/31/2021'))
 
 # get data for the whole state
 tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&State=MA&ReportDateType=reportdate&StartDate=1/1/2021&EndDate=12/31/2021'))
+
+# get data for one county 
+# country abbreviations are from station names, see the table here: will have to create a lookup table
+tmp <- read.csv(url('https://data.cocorahs.org/export/exportreports.aspx?ReportType=Daily&Format=csv&state=ma&county=pl&ReportDateType=reportdate&StartDate=1/01/2021&EndDate=12/31/2021'))
 
 # get all stations in massachusetts
 cocometarw <- read.csv(url('https://data.cocorahs.org/export/exportstations.aspx?Format=csv&state=ma'))
